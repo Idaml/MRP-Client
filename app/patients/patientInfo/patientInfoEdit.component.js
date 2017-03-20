@@ -65,6 +65,8 @@ var PatientEditInfoComponent = (function () {
             this.router.navigate(['./patientInfo']);
     };
     PatientEditInfoComponent.prototype.determineFormType = function () {
+        console.log(this.patient);
+        console.log(this.route.snapshot.params['id']);
         if (this.route.snapshot.params['id'] == 1 && this.patient && this.patient.PatientId) {
             this.formType = "E";
             this.addOrSave = 'Save Changes';

@@ -73,6 +73,8 @@ export class PatientEditInfoComponent implements OnInit,OnDestroy {
     }
 
     private determineFormType(): void {
+        console.log(this.patient);
+        console.log(this.route.snapshot.params['id']);
         if (this.route.snapshot.params['id'] == 1 && this.patient && this.patient.PatientId) {
             this.formType = "E";
             this.addOrSave = 'Save Changes';

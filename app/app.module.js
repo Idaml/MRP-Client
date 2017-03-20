@@ -64,7 +64,8 @@ var AppModule = (function () {
                     { path: '**', redirectTo: 'login', pathMatch: 'full' }
                 ])
             ],
-            declarations: [app_component_1.AppComponent,
+            declarations: [
+                app_component_1.AppComponent,
                 mainApp_component_1.MainAppComponent,
                 loginRegister_component_1.LoginRegisterComponent,
                 logout_component_1.LogoutComponent,
