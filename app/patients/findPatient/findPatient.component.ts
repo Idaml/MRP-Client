@@ -7,9 +7,8 @@ import { PatientsService } from '../../shared/services/patients.service';
 import { FindPatientModel } from './findPatientModel';
 
 @Component({
-    moduleId:module.id,
-    templateUrl:'./findPatient.component.html',
-    styleUrls:['./findPatient.component.css']
+    
+    template: require('./findPatient.component.html')
 })
 export class FindPatientComponent{
     patient:FindPatientModel = new FindPatientModel();

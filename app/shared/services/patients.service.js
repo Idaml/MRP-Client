@@ -12,15 +12,13 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
 var BehaviorSubject_1 = require("rxjs/BehaviorSubject");
-var config_1 = require('../../shared/config');
 var PatientsService = (function () {
-    function PatientsService(_http, config) {
+    function PatientsService(_http) {
         this._http = _http;
-        this.config = config;
         this.emitChangeSource = new BehaviorSubject_1.BehaviorSubject(null);
         // Observable string streams
         this.changeEmitted$ = this.emitChangeSource.asObservable();
-        this._url = this.config.apiUrl + "api/Patients";
+        this._url = SERVER_URL + "api/Patients";
     }
     // Service message commands
     PatientsService.prototype.emitChange = function (change) {
@@ -72,7 +70,7 @@ var PatientsService = (function () {
     };
     PatientsService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, config_1.CONFIG])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PatientsService);
     return PatientsService;
 }());

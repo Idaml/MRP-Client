@@ -5,7 +5,6 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { CONFIG } from '../config';
 import { User } from '../models/user';
 import { LoginInfo } from '../../loginRegistration/shared/loginInfo';
 import { RegistrationInfo } from '../../loginRegistration/shared/registrationInfo';
@@ -17,8 +16,8 @@ export class UsersService{
     private emitChangeSource = new BehaviorSubject<User>(null);
     changeEmitted$ = this.emitChangeSource.asObservable();
 
-    constructor(private _http: Http,private config:CONFIG){
-        this._url = this.config.apiUrl+"api/Accounts";
+    constructor(private _http: Http){
+        this._url = SERVER_URL+"api/Accounts";
     }
     
     emitChange(change: User) {

@@ -15,8 +15,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'mrp-app',
-            moduleId: module.id,
-            template: '<mrp-main-app></mrp-main-app>'
+            template: '<mrp-main-app></mrp-main-app>',
+            styles: [require('../styles.css')]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

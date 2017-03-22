@@ -6,8 +6,12 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "es2015", "dom" ],
-    "noImplicitAny": true,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true
   }
+  //todo, add a way to ignore node_modules folder so "noImplicitAny" can be set to true
 }

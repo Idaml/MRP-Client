@@ -87,9 +87,7 @@ var PatientDiagnosisDetailsComponent = (function () {
     PatientDiagnosisDetailsComponent = __decorate([
         core_1.Component({
             selector: 'mrp-patient-diagnosis-details',
-            moduleId: module.id,
-            templateUrl: './patient.diagnosisDetails.component.html',
-            styleUrls: ["../../../node_modules/bootstrap/dist/css/bootstrap.min.css"],
+            template: require('./patient.diagnosisDetails.component.html')
         }), 
         __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, patients_service_1.PatientsService, patientsFormSchema_service_1.PatientsFormSchemaService, core_2.DynamicFormService])
     ], PatientDiagnosisDetailsComponent);

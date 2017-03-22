@@ -5,15 +5,12 @@ import { EnumToOptionsFilter } from '../shared/components/enumToOptionsFilter.pi
 import { PatientsFormSchemaService } from '../shared/services/patientsFormSchema.service';
 import { PatientsService } from '../shared/services/patients.service';
 import { UsersService } from '../shared/services/users.service';
-import { User } from '../shared/models/user';
-import { CONFIG } from '../shared/config';
-
+import { User } from './../shared/models/user';
 @Component({
     selector: 'mrp-main-app',
-    moduleId: module.id,
-    templateUrl: './mainApp.component.html',
-    styleUrls: ['./mainApp.component.css'],
-    providers:[PatientsService,UsersService,PatientsFormSchemaService,EnumToOptionsFilter,CONFIG]
+    template: require('./mainApp.component.html'),
+    styles: [require('./mainApp.component.css')],
+    providers:[PatientsService,UsersService,PatientsFormSchemaService,EnumToOptionsFilter]
 })
 export class MainAppComponent implements OnInit{
     loggedInUser:User;

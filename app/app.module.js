@@ -32,6 +32,10 @@ var findPatient_component_1 = require('./patients/findPatient/findPatient.compon
 var canActivateOAuthGuard_1 = require('./shared/services/canActivateOAuthGuard');
 var dataFilter_pipe_1 = require('./shared/components/dataFilter.pipe');
 var canDeactivateFormEditGuard_1 = require("./shared/services/canDeactivateFormEditGuard");
+if (ENV === 'DEV') {
+    console.log(ENV);
+    console.log(SERVER_URL);
+}
 var AppModule = (function () {
     function AppModule() {
     }
@@ -62,7 +66,7 @@ var AppModule = (function () {
                     // {path: '**', redirectTo: 'findPatient', pathMatch:'full', canActivate : [CanActivateOAuthGuard]},
                     { path: '', redirectTo: 'login', pathMatch: 'full' },
                     { path: '**', redirectTo: 'login', pathMatch: 'full' }
-                ])
+                ]),
             ],
             declarations: [
                 app_component_1.AppComponent,

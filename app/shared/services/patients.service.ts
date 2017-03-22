@@ -5,7 +5,6 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
 import { PatientDiagnosis } from '../models/patientDiagnosis';
 import { FindPatientModel } from '../../patients/findPatient/findPatientModel';
-import { CONFIG } from '../../shared/config';
 import { Patient } from '../models/patient';
 
 @Injectable()
@@ -19,8 +18,8 @@ export class PatientsService{
         this.emitChangeSource.next(change);
     }
 
-    constructor(private _http: Http,private config:CONFIG){
-        this._url = this.config.apiUrl+"api/Patients";
+    constructor(private _http: Http){
+        this._url = SERVER_URL+"api/Patients";
     }
 
     getPatients(findPatientModel:FindPatientModel):Observable<Patient>{

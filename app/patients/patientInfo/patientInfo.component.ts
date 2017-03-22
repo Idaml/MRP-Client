@@ -1,5 +1,5 @@
-import { MedicalInstitution } from './../../shared/medicalInstitution';
-import { PatientDiagnosis } from './../../shared/patientDiagnosis';
+import { MedicalInstitution } from './../../shared/models/medicalInstitution';
+import { PatientDiagnosis } from './../../shared/models/patientDiagnosis';
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +7,7 @@ import { PatientsService } from './../../shared/services/patients.service';
 import { Patient, Race, Gender } from '../../shared/models/patient';
 
 @Component({
-    moduleId: module.id,
-    templateUrl: './patientInfo.component.html'
+    template: require('./patientInfo.component.html')
 })
 export class PatientInfoComponent {
     pageTitle: string = 'Patient Detail';

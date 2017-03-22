@@ -24,6 +24,11 @@ import { CanActivateOAuthGuard } from './shared/services/canActivateOAuthGuard';
 import { DataFilterPipe } from './shared/components/dataFilter.pipe';
 import { CanDeactivateDiagnosisFormGuard } from "./shared/services/canDeactivateFormEditGuard";
 
+if (ENV === 'DEV') {
+  console.log(ENV);
+  console.log(SERVER_URL)
+  //require(`${ENV}.config.js`);
+}
 
 @NgModule({
   imports: [BrowserModule,
@@ -51,7 +56,7 @@ import { CanDeactivateDiagnosisFormGuard } from "./shared/services/canDeactivate
       // {path: '**', redirectTo: 'findPatient', pathMatch:'full', canActivate : [CanActivateOAuthGuard]},
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: '**', redirectTo: 'login', pathMatch: 'full' }
-    ])
+    ]),
   ],
   declarations: [
     AppComponent,

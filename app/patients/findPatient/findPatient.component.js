@@ -43,9 +43,7 @@ var FindPatientComponent = (function () {
     };
     FindPatientComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            templateUrl: './findPatient.component.html',
-            styleUrls: ['./findPatient.component.css']
+            template: require('./findPatient.component.html')
         }), 
         __metadata('design:paramtypes', [patients_service_1.PatientsService, router_1.Router])
     ], FindPatientComponent);

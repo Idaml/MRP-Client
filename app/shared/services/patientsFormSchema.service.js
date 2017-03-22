@@ -10,13 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var config_1 = require('../config');
 //import { MY_DYNAMIC_FORM_MODEL } from '../models/schema.model';
 var PatientsFormSchemaService = (function () {
-    function PatientsFormSchemaService(_http, config) {
+    function PatientsFormSchemaService(_http) {
         this._http = _http;
-        this.config = config;
-        this._url = this.config.apiUrl + "api/PatientsFormSchema";
+        this._url = SERVER_URL + "api/PatientsFormSchema";
     }
     // SaveFirstSchema():Observable<any>{
     //     this.formModel = MY_DYNAMIC_FORM_MODEL;
@@ -35,7 +33,7 @@ var PatientsFormSchemaService = (function () {
     };
     PatientsFormSchemaService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, config_1.CONFIG])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PatientsFormSchemaService);
     return PatientsFormSchemaService;
 }());

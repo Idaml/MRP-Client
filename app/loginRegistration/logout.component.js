@@ -13,8 +13,8 @@ var core_1 = require('@angular/core');
 var LogoutComponent = (function () {
     function LogoutComponent(_route) {
         this._route = _route;
-        var id = +this._route.snapshot.params['id'];
-        if (id === 0)
+        var userId = +this._route.snapshot.params['id'];
+        if (userId === 0)
             this.mssg = "you have logged out successfully";
         else
             this.mssg = "we're sorry, for some reason we've lost your login credentials, please renew them by logging in.";
@@ -22,8 +22,7 @@ var LogoutComponent = (function () {
     LogoutComponent = __decorate([
         core_1.Component({
             selector: 'mrp-logout',
-            moduleId: module.id,
-            templateUrl: './logout.component.html'
+            template: require('./logout.component.html')
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], LogoutComponent);

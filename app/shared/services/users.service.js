@@ -14,15 +14,13 @@ var http_1 = require('@angular/http');
 var Observable_1 = require('rxjs/Observable');
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/catch');
-var config_1 = require('../config');
 var user_1 = require('../models/user');
 var UsersService = (function () {
-    function UsersService(_http, config) {
+    function UsersService(_http) {
         this._http = _http;
-        this.config = config;
         this.emitChangeSource = new BehaviorSubject_1.BehaviorSubject(null);
         this.changeEmitted$ = this.emitChangeSource.asObservable();
-        this._url = this.config.apiUrl + "api/Accounts";
+        this._url = SERVER_URL + "api/Accounts";
     }
     UsersService.prototype.emitChange = function (change) {
         this.emitChangeSource.next(change);
@@ -71,7 +69,7 @@ var UsersService = (function () {
     };
     UsersService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, config_1.CONFIG])
+        __metadata('design:paramtypes', [http_1.Http])
     ], UsersService);
     return UsersService;
 }());

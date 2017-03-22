@@ -14,7 +14,6 @@ var enumToOptionsFilter_pipe_1 = require('../shared/components/enumToOptionsFilt
 var patientsFormSchema_service_1 = require('../shared/services/patientsFormSchema.service');
 var patients_service_1 = require('../shared/services/patients.service');
 var users_service_1 = require('../shared/services/users.service');
-var config_1 = require('../shared/config');
 var MainAppComponent = (function () {
     function MainAppComponent(router, usersService) {
         var _this = this;
@@ -46,10 +45,9 @@ var MainAppComponent = (function () {
     MainAppComponent = __decorate([
         core_1.Component({
             selector: 'mrp-main-app',
-            moduleId: module.id,
-            templateUrl: './mainApp.component.html',
-            styleUrls: ['./mainApp.component.css'],
-            providers: [patients_service_1.PatientsService, users_service_1.UsersService, patientsFormSchema_service_1.PatientsFormSchemaService, enumToOptionsFilter_pipe_1.EnumToOptionsFilter, config_1.CONFIG]
+            template: require('./mainApp.component.html'),
+            styles: [require('./mainApp.component.css')],
+            providers: [patients_service_1.PatientsService, users_service_1.UsersService, patientsFormSchema_service_1.PatientsFormSchemaService, enumToOptionsFilter_pipe_1.EnumToOptionsFilter]
         }), 
         __metadata('design:paramtypes', [router_1.Router, users_service_1.UsersService])
     ], MainAppComponent);

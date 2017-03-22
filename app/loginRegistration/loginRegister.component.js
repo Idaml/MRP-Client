@@ -50,9 +50,8 @@ var LoginRegisterComponent = (function () {
     LoginRegisterComponent = __decorate([
         core_1.Component({
             selector: 'mrp-loginRegister',
-            moduleId: module.id,
-            templateUrl: './loginRegister.component.html',
-            styleUrls: ['./loginRegister.component.css']
+            template: require('./loginRegister.component.html'),
+            styles: [require('./loginRegister.component.css')]
         }), 
         __metadata('design:paramtypes', [users_service_1.UsersService, router_1.ActivatedRoute, router_1.Router])
     ], LoginRegisterComponent);

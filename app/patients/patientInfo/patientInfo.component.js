@@ -38,8 +38,7 @@ var PatientInfoComponent = (function () {
     };
     PatientInfoComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            templateUrl: './patientInfo.component.html'
+            template: require('./patientInfo.component.html')
         }), 
         __metadata('design:paramtypes', [router_1.Router, patients_service_1.PatientsService])
     ], PatientInfoComponent);

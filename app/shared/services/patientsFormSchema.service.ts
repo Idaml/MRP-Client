@@ -3,7 +3,6 @@ import { Http,RequestOptions,Headers,Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { DynamicFormControlModel } from '@ng2-dynamic-forms/core';
 
-import { CONFIG } from '../config';
 //import { MY_DYNAMIC_FORM_MODEL } from '../models/schema.model';
 
 @Injectable()
@@ -11,8 +10,8 @@ export class PatientsFormSchemaService{
     private _url: string;
     formModel:Array<DynamicFormControlModel>;
 
-    constructor(private _http: Http,private config:CONFIG){
-        this._url = this.config.apiUrl+"api/PatientsFormSchema";
+    constructor(private _http: Http){
+        this._url = SERVER_URL+"api/PatientsFormSchema";
     }
 
     // SaveFirstSchema():Observable<any>{

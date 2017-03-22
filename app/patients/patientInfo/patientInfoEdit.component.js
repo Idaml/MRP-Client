@@ -86,9 +86,7 @@ var PatientEditInfoComponent = (function () {
     PatientEditInfoComponent = __decorate([
         core_1.Component({
             selector: 'mrp-patient-edit',
-            moduleId: module.id,
-            templateUrl: './patientInfoEdit.component.html',
-            styleUrls: ['./patientInfoEdit.component.css']
+            template: require('./patientInfoEdit.component.html')
         }), 
         __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, patients_service_1.PatientsService])
     ], PatientEditInfoComponent);

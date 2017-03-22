@@ -11,9 +11,7 @@ import { PatientDiagnosis } from '../../shared/models/patientDiagnosis';
 
 @Component({
     selector: 'mrp-patient-diagnosis-details',
-    moduleId: module.id,
-    templateUrl: './patient.diagnosisDetails.component.html',
-    styleUrls: ["../../../node_modules/bootstrap/dist/css/bootstrap.min.css"],
+    template: require('./patient.diagnosisDetails.component.html')
 })
 export class PatientDiagnosisDetailsComponent implements OnInit {
     disable: string = "";
