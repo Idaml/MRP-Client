@@ -5,7 +5,7 @@
   "scripts": {
     "start": "SET NODE_ENV=PROD",
     "dev":"SET NODE_ENV=DEV&&webpack-dev-server --inline --hot --history-api-fallback --open",
-    "webpack": "webpack",
+    "webpack": "SET NODE_ENV=PROD&&webpack",
     "tsc": "tsc"
   },
   "keywords": [],
