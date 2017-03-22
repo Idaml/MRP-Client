@@ -39,7 +39,7 @@ module.exports = {
             ENV: JSON.stringify('DEV'),
             SERVER_URL: (process.env.NODE_ENV == 'DEV') ?
                 JSON.stringify('http://localhost:53100/') ://if DEV env - with npm start script
-                JSON.stringify('http://mrpserver.azurewebsites.net/')//if PROD env - with webpack script
+                JSON.stringify('http://mrpservershiba.azurewebsites.net/')//if PROD env - with webpack script
         }),
         new webpack.optimize.UglifyJsPlugin({
             mangle: false
