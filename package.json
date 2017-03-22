@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "SET NODE_ENV=DEV&&webpack-dev-server --inline --hot --history-api-fallback --open",
+    "start": "SET NODE_ENV=PROD",
+    "dev":"SET NODE_ENV=DEV&&webpack-dev-server --inline --hot --history-api-fallback --open",
     "webpack": "webpack",
     "tsc": "tsc"
   },
