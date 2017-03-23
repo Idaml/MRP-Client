@@ -63,6 +63,7 @@ export class PatientDiagnosisDetailsComponent implements OnInit {
         }
         else {
             this.diagnosis.Id = this.patient.Diagnosis.length;
+            this.diagnosis.DiagnosisDate = new Date();
             this.patient.Diagnosis.push(this.diagnosis);
             this.patientsService.addDiagnosis(this.diagnosis).subscribe((res: Response) => {
                 res.ok ? this.onSuccessfulSave() : this.error = "we're sorry, something is wrong with the information you entered!";
