@@ -8,7 +8,8 @@ import { FindPatientModel } from './findPatientModel';
 
 @Component({
     
-    template: require('./findPatient.component.html')
+    template: require('./findPatient.component.html'),
+    styles: [require('./findPatient.component.css')]
 })
 export class FindPatientComponent{
     patient:FindPatientModel = new FindPatientModel();

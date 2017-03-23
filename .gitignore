@@ -1,1 +1,3 @@
 node_modules/
+*.map
+app/patients/patientInfo/patientInfo.component.js

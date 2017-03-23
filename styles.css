@@ -3,11 +3,6 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
 
 .container-find-patient{
     width:30%;
@@ -30,4 +25,8 @@ h1 {
 .panel-add-new-patient{
     width:50%;
     margin: auto;
+}
+
+.container-footer{
+    float:left;
 }

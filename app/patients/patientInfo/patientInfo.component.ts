@@ -7,7 +7,8 @@ import { PatientsService } from './../../shared/services/patients.service';
 import { Patient, Race, Gender } from '../../shared/models/patient';
 
 @Component({
-    template: require('./patientInfo.component.html')
+    template: require('./patientInfo.component.html'),
+    styles:[require('./patientInfo.component.css')]
 })
 export class PatientInfoComponent {
     pageTitle: string = 'Patient Detail';
