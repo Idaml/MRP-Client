@@ -57,6 +57,7 @@ var PatientDiagnosisDetailsComponent = (function () {
         }
         else {
             this.diagnosis.Id = this.patient.Diagnosis.length;
+            this.diagnosis.DiagnosisDate = new Date();
             this.patient.Diagnosis.push(this.diagnosis);
             this.patientsService.addDiagnosis(this.diagnosis).subscribe(function (res) {
                 res.ok ? _this.onSuccessfulSave() : _this.error = "we're sorry, something is wrong with the information you entered!";
