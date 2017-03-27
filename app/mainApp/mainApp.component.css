@@ -39,3 +39,7 @@ li button{
 .navbar-toggle {
     z-index: 1;
 }
+
+.container-footer{
+  float: left;
+}

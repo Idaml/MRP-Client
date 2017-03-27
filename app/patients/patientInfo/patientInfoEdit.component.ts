@@ -8,7 +8,8 @@ import { Subscription } from "rxjs/Subscription";
 
 @Component({
     selector: 'mrp-patient-edit',
-    template: require('./patientInfoEdit.component.html')
+    template: require('./patientInfoEdit.component.html'),
+    styles: [require('./patientInfoEdit.component.css')]
 })
 export class PatientEditInfoComponent implements OnInit, OnDestroy {
     patient: Patient;
@@ -53,8 +54,8 @@ export class PatientEditInfoComponent implements OnInit, OnDestroy {
             this.patientService.editPatient(this.patient)
                 .subscribe((res: Response) => {
                     if (res.ok) {
-                        let patient = new Patient().fromJSON(res.json());
-                        this.patientService.emitChange(patient);
+                        //let patient = new Patient().fromJSON(res.json());
+                        this.patientService.emitChange(this.patient);
                         this.router.navigate(['./patientInfo']);
                     }
                     else

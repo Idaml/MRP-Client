@@ -1,0 +1,50 @@
+<div class="container container-find-patient">
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="font-size:large">
+            {{pageTitle}}
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="string" class="form-control" id="name" [(ngModel)]="patient.Name" (ngModelChange)="onChange($event)" name="name">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="error">{{error}}</div>
+                        <!--<button type="button" class="btn btn-primary" (click)='find()'>Find</button>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-patient-list">
+    <div class="panel panel-primary container-patient-list" *ngIf="patient">
+        <div class="panel-heading" style="font-size:large">Patients List </div>
+
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 30%">
+                            ID
+                        </th>
+                        <th style="width: 25%">
+                            Name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let patient of patientList;let i=index">
+                        <td>{{patient.PatientId}}</td>
+                        <td>{{patient.Name}}</td>
+                        <td><button (click)="openDetails(patient)" class="btn btn-primary">Details</button></td>
+                        <td><button (click)="removePatient(patient)" class="btn btn-primary">Remove</button>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
