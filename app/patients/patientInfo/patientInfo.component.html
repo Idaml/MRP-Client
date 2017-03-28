@@ -119,7 +119,7 @@
                     <input class="form-control form-control input-sm" [(ngModel)]="filterQuery" />
                 </div>
             </div>
-            <table class="table table-striped" [mfData]="patient.Diagnosis | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
+            <table class="table table-striped" [mfData]="patient.Diagnosis | patientFilterPipe : 'substring' : 'DoctorName' : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"
                 [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                 <thead>
                     <tr>
@@ -142,7 +142,14 @@
                     </tr>-->
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                     <tr *ngFor="let diag of patient.Diagnosis;let i=index">
+=======
+                    <tr *ngFor="let diag of patient.Diagnosis; let i=index">
+                        <!--<td>
+                            <button (click)="openDetails(i+1)" class="btn btn-primary">Details</button>
+                        </td>-->
+>>>>>>> refs/remotes/origin/master
                         <td>{{i +1}}</td>
                         <td>{{diag.DoctorName}}</td>
                         <td>{{diag.DiagnosisDate| date:'dd/MM/yyyy'}}</td>
@@ -162,7 +169,7 @@
                         </td>
                     </tr>
                 </tfoot>
-                </table>
+            </table>
         </div>
     </div>
 </div>

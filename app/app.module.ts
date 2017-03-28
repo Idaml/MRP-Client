@@ -13,6 +13,7 @@ import { MainAppComponent } from './mainApp/mainApp.component';
 import { LoginRegisterComponent } from './loginRegistration/loginRegister.component';
 import { LogoutComponent } from './loginRegistration/logout.component';
 import { EnumToOptionsFilter } from './shared/components/enumToOptionsFilter.pipe';
+import { patientFilterPipe } from './shared/components/patientFilter.pipe';
 import { EqualValidator } from './loginRegistration/shared/equalValidator.directive';
 import { PatientInfoComponent } from './patients/patientInfo/patientInfo.component';
 import { PatientEditInfoComponent } from './patients/patientInfo/patientInfoEdit.component';
@@ -74,7 +75,8 @@ if (ENV === 'DEV') {
     TabComponent,
     TabsComponent,
     EnumToOptionsFilter,
-    DataFilterPipe
+    DataFilterPipe,
+    patientFilterPipe
   ],
   providers: [CanActivateOAuthGuard, CanDeactivateDiagnosisFormGuard],
   bootstrap: [AppComponent]

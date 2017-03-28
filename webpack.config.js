@@ -24,7 +24,7 @@ module.exports = {
             { test: /\.css$/, use: ['to-string-loader', 'css-loader'], exclude: /node_modules/ },
             { test: /\.css$/, use: ['style-loader', 'css-loader'], include: /node_modules/ },
             { test: /\.(gif|png|jpe?g)$/, loader: 'url-loader', query: { name: 'assets/images/[hash].[ext]', limit: 100000 } },
-            { test: /\.(ttf|eot|svg|woff2?)$/, loader: 'file-loader', query: { name: 'assets/fonts/[hash].[ext]'} }
+            { test: /\.(ttf|eot|svg|woff2?)$/, loader: 'file-loader', query: { name: 'assets/fonts/[hash].[ext]' } }
         ]
     },
     resolve: {
@@ -41,9 +41,12 @@ module.exports = {
                 JSON.stringify('http://localhost:53100/') ://if DEV env - with npm start script
                 JSON.stringify('http://mrpservershiba.azurewebsites.net/')//if PROD env - with webpack script
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: false
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     mangle: false,
+        //     compress: {
+        //         drop_console: true
+        //     }
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks: module => module.context && module.context.indexOf('node_modules') !== -1

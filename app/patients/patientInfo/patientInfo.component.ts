@@ -30,8 +30,17 @@ export class PatientInfoComponent {
     }
 
     ngOnInit(): void {
+<<<<<<< HEAD
         if (!(this.patient && this.patient.PatientId)){
             this.router.navigate(['./findPatient'])
+=======
+        if (!(this.patient && this.patient.PatientId))
+            this.router.navigate(['./findPatient']);
+    }
+
+    openDetails(diagnosisNum: number): void {
+        this.router.navigate(['./patientDiagnosisDetails/' + diagnosisNum]);
+>>>>>>> refs/remotes/origin/master
     }
 }
 

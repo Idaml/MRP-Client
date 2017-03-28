@@ -18,7 +18,11 @@ export class FindPatientComponent{
     error:string;
     
     constructor(private patientsService:PatientsService, private router:Router){
+<<<<<<< HEAD
         this.patient.PatientId = '123456789';
+=======
+        
+>>>>>>> refs/remotes/origin/master
     }
 
     find():void{
