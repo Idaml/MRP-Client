@@ -1,28 +1,30 @@
-<h1>{{pageTitle}}</h1>
-<tabs>
-    <div class="container">
-        <div class="col-md-12 col-md-offset-1">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form [formGroup]="formGroup" (ngSubmit)="submit()">
-                        <tabs>
-                            <tab *ngFor="let group of formModel" [tabTitle]="group.legend">
-                                <dynamic-form-bootstrap-control *ngFor="let controlModel of [group]"
-                                    [controlGroup]="formGroup"
-                                    [model]="controlModel"
-                                    (change)="onChange($event)">
-                                </dynamic-form-bootstrap-control>
-                            </tab>
-                        </tabs>
-                        <div class="alert alert-danger" *ngIf="error">{{error}}</div>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <a class="btn btn-primary" style="width:auto;margin-left:10px" [routerLink]="['./patientInfo']">
-                            <i class="glyphicon glyphicon-edit"></i> Cancel
-                        </a>
-                        <!--<button type="button" class="btn btn-primary" (click)='goBack()'>Cancel</button>-->
-                    </form>
+<!--<h1>{{pageTitle}}</h1>-->
+<div class="panel panel-primary panel-add-new-patient" *ngIf="patient">
+    <div class="panel-heading" style="font-size:large">
+        {{pageTitle}}
+    </div>
+    <tabs>
+        <div class="container tab-container">
+            <div class="col-md-12 col-md-offset-1 dynamic-form-container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form [formGroup]="formGroup" (ngSubmit)="submit()">
+                            <tabs>
+                                <tab *ngFor="let group of formModel" [tabTitle]="group.legend">
+                                    <dynamic-form-bootstrap-control *ngFor="let controlModel of [group]" [controlGroup]="formGroup" [model]="controlModel" (change)="onChange($event)">
+                                    </dynamic-form-bootstrap-control>
+                                </tab>
+                            </tabs>
+                            <div class="alert alert-danger" *ngIf="error">{{error}}</div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <a class="btn btn-primary" style="width:auto;margin-left:10px" [routerLink]="['./patientInfo']">
+                                <i class="glyphicon glyphicon-edit"></i> Cancel
+                            </a>
+                            <!--<button type="button" class="btn btn-primary" (click)='goBack()'>Cancel</button>-->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>     
-</tabs>
+    </tabs>
+</div>

@@ -18,7 +18,7 @@ export class FindPatientComponent{
     error:string;
     
     constructor(private patientsService:PatientsService, private router:Router){
-        this.patient.PatientId = '026606657';
+        
     }
 
     find():void{

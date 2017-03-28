@@ -25,6 +25,7 @@ export class PatientsFormSchemaService{
     // }
 
     GetFirstSchema():Observable<any>{
+        console.log('getting first forms schema');
         let accessToken:string = JSON.parse(sessionStorage.getItem('token')).token;
         let headers: Headers = new Headers({'Authorization':'Bearer '+accessToken});
         let options: RequestOptions = new RequestOptions({headers: headers});

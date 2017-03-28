@@ -1,3 +1,8 @@
 .container-find-patient{
     width:30%;
 }
+
+.container-patient-list{
+    width:70%;
+    margin:auto;
+}

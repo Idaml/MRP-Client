@@ -4,7 +4,7 @@
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "start": "SET NODE_ENV=PROD",
-    "dev":"SET NODE_ENV=DEV&&webpack-dev-server --inline --hot --history-api-fallback --open",
+    "dev": "SET NODE_ENV=DEV&&webpack-dev-server --inline --hot --history-api-fallback --open",
     "webpack": "SET NODE_ENV=PROD&&webpack",
     "tsc": "tsc"
   },
@@ -26,6 +26,7 @@
     "angular-in-memory-web-api": "~0.2.4",
     "angular2-datatable": "^0.5.3",
     "typescript": "~2.0.10",
+    "hammerjs": "^2.0.8",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "zone.js": "^0.7.4",
@@ -33,6 +34,7 @@
     "rxjs": "^5.2.0"
   },
   "devDependencies": {
+    "@types/hammerjs": "^2.0.34",
     "@types/node": "^6.0.46",
     "canonical-path": "0.0.2",
     "css-loader": "^0.27.3",

@@ -8,7 +8,8 @@ import { Subscription } from "rxjs/Subscription";
 
 @Component({
     selector: 'mrp-patient-edit',
-    template: require('./patientInfoEdit.component.html')
+    template: require('./patientInfoEdit.component.html'),
+    styles: [require('./patientInfoEdit.component.css')]
 })
 export class PatientEditInfoComponent implements OnInit, OnDestroy {
     patient: Patient;
@@ -26,6 +27,9 @@ export class PatientEditInfoComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.patientService.changeEmitted$.subscribe(patient => this.patient = patient);
         this.sub = this.route.params.subscribe(params => this.determineFormType());
+        console.log('In find patient form');
+        console.log(this.patient);
+        console.log('Form type : ' + this.formType);
     }
 
     ngOnDestroy() {
@@ -53,8 +57,8 @@ export class PatientEditInfoComponent implements OnInit, OnDestroy {
             this.patientService.editPatient(this.patient)
                 .subscribe((res: Response) => {
                     if (res.ok) {
-                        let patient = new Patient().fromJSON(res.json());
-                        this.patientService.emitChange(patient);
+                        //let patient = new Patient().fromJSON(res.json());
+                        this.patientService.emitChange(this.patient);
                         this.router.navigate(['./patientInfo']);
                     }
                     else
@@ -79,8 +83,10 @@ export class PatientEditInfoComponent implements OnInit, OnDestroy {
             this.pageTitle = 'Edit Details: ' + this.patient.Name;
             this.isFieldDisabled = true;
         }
-        else if (!(this.patient && this.patient.PatientId))
+        else if (!(this.patient && this.patient.PatientId)) {
+            console.log('navigating to /findPatient');
             this.router.navigate(['./findPatient']);
+        }
         else {
             this.patient = new Patient();
             this.formType = "A";

@@ -13,6 +13,7 @@ import { MainAppComponent } from './mainApp/mainApp.component';
 import { LoginRegisterComponent } from './loginRegistration/loginRegister.component';
 import { LogoutComponent } from './loginRegistration/logout.component';
 import { EnumToOptionsFilter } from './shared/components/enumToOptionsFilter.pipe';
+import { patientFilterPipe } from './shared/components/patientFilter.pipe';
 import { EqualValidator } from './loginRegistration/shared/equalValidator.directive';
 import { PatientInfoComponent } from './patients/patientInfo/patientInfo.component';
 import { PatientEditInfoComponent } from './patients/patientInfo/patientInfoEdit.component';
@@ -20,6 +21,7 @@ import { TabComponent } from './shared/components/tabs/tab.component';
 import { TabsComponent } from './shared/components/tabs/tabs.component';
 import { PatientDiagnosisDetailsComponent } from './patients/patientInfo/patient.diagnosisDetails.component';
 import { FindPatientComponent } from './patients/findPatient/findPatient.component';
+import { FindPatientByNameComponent } from './patients/findPatient/findPatientByName.component';
 import { CanActivateOAuthGuard } from './shared/services/canActivateOAuthGuard';
 import { DataFilterPipe } from './shared/components/dataFilter.pipe';
 import { CanDeactivateDiagnosisFormGuard } from "./shared/services/canDeactivateFormEditGuard";
@@ -49,6 +51,7 @@ if (ENV === 'DEV') {
       { path: 'patientEdit/:id', component: PatientEditInfoComponent, canActivate: [CanActivateOAuthGuard] },
       { path: 'patientDiagnosisDetails/:id', component: PatientDiagnosisDetailsComponent, canActivate: [CanActivateOAuthGuard], canDeactivate: [CanDeactivateDiagnosisFormGuard] },
       { path: 'findPatient', component: FindPatientComponent, canActivate: [CanActivateOAuthGuard] },
+      { path: 'findPatientByName', component: FindPatientByNameComponent, canActivate: [CanActivateOAuthGuard] },
       // {path: 'userManagment', component: UnderConstructionComponent, canActivate : [CanActivateOAuthGuard]},
       // {path: 'research', component: UnderConstructionComponent, canActivate : [CanActivateOAuthGuard]},
       // {path: 'personalInfo', component: UnderConstructionComponent, canActivate : [CanActivateOAuthGuard]},
@@ -68,10 +71,12 @@ if (ENV === 'DEV') {
     PatientEditInfoComponent,
     PatientDiagnosisDetailsComponent,
     FindPatientComponent,
+    FindPatientByNameComponent,
     TabComponent,
     TabsComponent,
     EnumToOptionsFilter,
-    DataFilterPipe
+    DataFilterPipe,
+    patientFilterPipe
   ],
   providers: [CanActivateOAuthGuard, CanDeactivateDiagnosisFormGuard],
   bootstrap: [AppComponent]
